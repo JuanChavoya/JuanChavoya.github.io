@@ -121,6 +121,44 @@
     @media (min-width: 820px){
       .card{ grid-column: span 6; }
     }
+    .card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.highlights {
+  padding-left: 18px;
+  margin: 10px 0;
+}
+
+.highlights li {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.stack {
+  font-size: 0.85rem;
+  color: #555;
+}
   </style>
 </head>
 <body>
@@ -139,16 +177,66 @@
       </div>
     </header>
 
-    <h2>Proyectos</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Análisis de siniestros de vivienda</h3>
-        <p>Análisis de frecuencia y severidad para estimación de riesgo por sector y métricas clave.</p>
-        <div class="meta">
-          <span class="stack">Python · Pandas · EDA · Métricas de riesgo</span>
-          <a href="https://github.com/JuanChavoya/ds-siniestros-vivienda" target="_blank">Ver repositorio</a>
-        </div>
+<h2>Proyectos</h2>
+
+<div class="grid">
+  <article class="card">
+    <img class="thumb" src="assets/siniestros.png" alt="Vista previa - Siniestros de vivienda">
+    <div class="card-body">
+      <h3>Análisis de siniestros de vivienda</h3>
+      <p>Análisis de frecuencia y severidad para estimación de riesgo por sector y métricas clave.</p>
+
+      <ul class="highlights">
+        <li>Depuración y estandarización de variables críticas.</li>
+        <li>Métricas de riesgo por sector para priorización.</li>
+        <li>Visualizaciones para interpretación ejecutiva.</li>
+      </ul>
+
+      <div class="meta">
+        <span class="stack">Python · Pandas · EDA · Métricas de riesgo</span>
+        <a href="https://github.com/JuanChavoya/ds-siniestros-vivienda" target="_blank">Ver repositorio</a>
       </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <img class="thumb" src="assets/bicicletas.png" alt="Vista previa - EDA bicicletas">
+    <div class="card-body">
+      <h3>EDA de viajes en bicicleta</h3>
+      <p>Exploración de patrones temporales, comportamiento de usuarios y distribución de viajes.</p>
+
+      <ul class="highlights">
+        <li>Análisis por hora/día y estacionalidad.</li>
+        <li>Variables derivadas para enriquecer el dataset.</li>
+        <li>Hallazgos sobre patrones de uso y segmentos.</li>
+      </ul>
+
+      <div class="meta">
+        <span class="stack">Python · Pandas · Visualización · Insights</span>
+        <a href="https://github.com/JuanChavoya/ds-eda-bicicletas" target="_blank">Ver repositorio</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <img class="thumb" src="assets/harrypotter.png" alt="Vista previa - Clustering Harry Potter">
+    <div class="card-body">
+      <h3>Clustering de personajes (Harry Potter)</h3>
+      <p>Segmentación no supervisada basada en atributos narrativos/emocionales y análisis de clusters.</p>
+
+      <ul class="highlights">
+        <li>Selección y transformación de variables para clustering.</li>
+        <li>Comparación de k y evaluación con métricas.</li>
+        <li>Interpretación de clusters y perfiles de personajes.</li>
+      </ul>
+
+      <div class="meta">
+        <span class="stack">Scikit-learn · K-Means · EDA · Interpretación</span>
+        <a href="https://github.com/JuanChavoya/REPO-HARRY-POTTER" target="_blank">Ver repositorio</a>
+      </div>
+    </div>
+  </article>
+</div>
 
       <div class="card">
         <h3>EDA de viajes en bicicleta</h3>
