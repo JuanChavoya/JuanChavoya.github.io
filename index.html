@@ -1,75 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Juan Chavoya</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.6;
-            color: #222;
-        }
-        h1, h2 {
-            color: #111;
-        }
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .project {
-            margin-bottom: 24px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Chavoya</title>
+  <style>
+    :root{
+      --text:#111827;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --card:#f9fafb;
+      --border:#e5e7eb;
+      --link:#2563eb;
+    }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+    header{
+      display:flex;
+      gap:18px;
+      justify-content:space-between;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      margin-bottom: 28px;
+    }
+    .title h1{
+      margin:0 0 6px 0;
+      font-size: 34px;
+      letter-spacing: -0.02em;
+    }
+    .title p{
+      margin:0;
+      color:var(--muted);
+      max-width: 70ch;
+    }
+    .links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:10px;
+      color:var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+    }
+    .btn.primary{
+      background: var(--link);
+      color: #fff;
+      border-color: var(--link);
+    }
+    h2{
+      margin: 30px 0 14px 0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      grid-column: span 12;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .card h3{
+      margin:0 0 6px 0;
+      font-size: 16px;
+    }
+    .card p{
+      margin:0 0 10px 0;
+      color:var(--muted);
+    }
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .stack{
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background:#fff;
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space:nowrap;
+    }
+    .card a{
+      color: var(--link);
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+    }
+    .footer{
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (min-width: 820px){
+      .card{ grid-column: span 6; }
+    }
+  </style>
 </head>
 <body>
-
-    <h1>Juan Chavoya</h1>
-
-    <p>
-        Profesional enfocado en análisis de datos, modelado estadístico y exploración de información
-        para la toma de decisiones. Experiencia trabajando con proyectos de datos de punta a punta,
-        desde limpieza y análisis exploratorio hasta modelado y conclusiones.
-    </p>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>Juan Chavoya</h1>
+        <p>
+          Profesional enfocado en análisis de datos y modelado estadístico, con experiencia en proyectos end-to-end:
+          limpieza, análisis exploratorio, modelado y comunicación de hallazgos.
+        </p>
+      </div>
+      <div class="links">
+        <a class="btn" href="https://github.com/JuanChavoya" target="_blank">GitHub</a>
+        <a class="btn primary" href="https://www.linkedin.com/in/TU-LINKEDIN" target="_blank">LinkedIn</a>
+      </div>
+    </header>
 
     <h2>Proyectos</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Análisis de siniestros de vivienda</h3>
+        <p>Análisis de frecuencia y severidad para estimación de riesgo por sector y métricas clave.</p>
+        <div class="meta">
+          <span class="stack">Python · Pandas · EDA · Métricas de riesgo</span>
+          <a href="https://github.com/JuanChavoya/ds-siniestros-vivienda" target="_blank">Ver repositorio</a>
+        </div>
+      </div>
 
-    <div class="project">
-        <strong>Análisis de siniestros de vivienda</strong><br>
-        Análisis actuarial de frecuencia y severidad para estimación de riesgo por sector.<br>
-        <a href="https://github.com/JuanChavoya/ds-siniestros-vivienda" target="_blank">
-            Ver repositorio
-        </a>
+      <div class="card">
+        <h3>EDA de viajes en bicicleta</h3>
+        <p>Exploración de patrones temporales, comportamiento de usuarios y distribución de viajes.</p>
+        <div class="meta">
+          <span class="stack">Python · Pandas · Visualización · Insights</span>
+          <a href="https://github.com/JuanChavoya/ds-eda-bicicletas" target="_blank">Ver repositorio</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Clustering de personajes (Harry Potter)</h3>
+        <p>Segmentación no supervisada basada en atributos narrativos/emocionales y análisis de clusters.</p>
+        <div class="meta">
+          <span class="stack">Scikit-learn · K-Means · EDA · Interpretación</span>
+          <a href="https://github.com/JuanChavoya/REPO-HARRY-POTTER" target="_blank">Ver repositorio</a>
+        </div>
+      </div>
     </div>
 
-    <div class="project">
-        <strong>EDA de viajes en bicicleta</strong><br>
-        Análisis exploratorio de patrones temporales, comportamiento de usuarios y distribución de viajes.<br>
-        <a href="https://github.com/JuanChavoya/ds-eda-bicicletas" target="_blank">
-            Ver repositorio
-        </a>
+    <div class="footer">
+      © Juan Chavoya · Sitio publicado con GitHub Pages
     </div>
-
-    <div class="project">
-        <strong>Clustering de personajes (Harry Potter)</strong><br>
-        Segmentación de personajes basada en atributos narrativos y emocionales.<br>
-        <a href="https://github.com/JuanChavoya/REPO-HARRY-POTTER" target="_blank">
-            Ver repositorio
-        </a>
-    </div>
-
-    <h2>Contacto</h2>
-
-    <p>
-        <a href="https://www.linkedin.com/in/TU-LINKEDIN" target="_blank">LinkedIn</a><br>
-        <a href="https://github.com/JuanChavoya" target="_blank">GitHub</a>
-    </p>
-
+  </div>
 </body>
 </html>
