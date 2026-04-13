@@ -76,9 +76,17 @@
     }
     .card{
       grid-column: span 12;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+    .thumb{
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-body{
       padding: 16px;
     }
     .card h3{
@@ -89,15 +97,24 @@
       margin:0 0 10px 0;
       color:var(--muted);
     }
+    .highlights{
+      padding-left: 18px;
+      margin: 10px 0;
+    }
+    .highlights li{
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
     .meta{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       align-items:center;
       justify-content:space-between;
+      margin-top: 12px;
     }
     .stack{
-      font-size: 13px;
+      font-size: 0.85rem;
       color: var(--muted);
       border: 1px solid var(--border);
       background:#fff;
@@ -121,44 +138,6 @@
     @media (min-width: 820px){
       .card{ grid-column: span 6; }
     }
-    .card {
-  background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-}
-
-.thumb {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 16px;
-}
-
-.highlights {
-  padding-left: 18px;
-  margin: 10px 0;
-}
-
-.highlights li {
-  margin-bottom: 6px;
-  font-size: 0.9rem;
-}
-
-.meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 12px;
-}
-
-.stack {
-  font-size: 0.85rem;
-  color: #555;
-}
   </style>
 </head>
 <body>
@@ -167,8 +146,8 @@
       <div class="title">
         <h1>Juan Chavoya</h1>
         <p>
-          Profesional enfocado en análisis de datos y modelado estadístico, con experiencia en proyectos end-to-end:
-          limpieza, análisis exploratorio, modelado y comunicación de hallazgos.
+          Profesional enfocado en analisis de datos y modelado estadistico, con experiencia en proyectos end-to-end:
+          limpieza, analisis exploratorio, modelado y comunicacion de hallazgos.
         </p>
       </div>
       <div class="links">
@@ -177,84 +156,80 @@
       </div>
     </header>
 
-<h2>Proyectos</h2>
+    <h2>Proyectos</h2>
 
-<div class="grid">
-  <article class="card">
-    <img class="thumb" src="assets/siniestros.png" alt="Vista previa - Siniestros de vivienda">
-    <div class="card-body">
-      <h3>Análisis de siniestros de vivienda</h3>
-      <p>Análisis de frecuencia y severidad para estimación de riesgo por sector y métricas clave.</p>
-
-      <ul class="highlights">
-        <li>Depuración y estandarización de variables críticas.</li>
-        <li>Métricas de riesgo por sector para priorización.</li>
-        <li>Visualizaciones para interpretación ejecutiva.</li>
-      </ul>
-
-      <div class="meta">
-        <span class="stack">Python · Pandas · EDA · Métricas de riesgo</span>
-        <a href="https://github.com/JuanChavoya/ds-siniestros-vivienda" target="_blank">Ver repositorio</a>
-      </div>
-    </div>
-  </article>
-
-  <article class="card">
-    <img class="thumb" src="assets/bicicletas.png" alt="Vista previa - EDA bicicletas">
-    <div class="card-body">
-      <h3>EDA de viajes en bicicleta</h3>
-      <p>Exploración de patrones temporales, comportamiento de usuarios y distribución de viajes.</p>
-
-      <ul class="highlights">
-        <li>Análisis por hora/día y estacionalidad.</li>
-        <li>Variables derivadas para enriquecer el dataset.</li>
-        <li>Hallazgos sobre patrones de uso y segmentos.</li>
-      </ul>
-
-      <div class="meta">
-        <span class="stack">Python · Pandas · Visualización · Insights</span>
-        <a href="https://github.com/JuanChavoya/ds-eda-bicicletas" target="_blank">Ver repositorio</a>
-      </div>
-    </div>
-  </article>
-
-  <article class="card">
-    <img class="thumb" src="assets/harrypotter.png" alt="Vista previa - Clustering Harry Potter">
-    <div class="card-body">
-      <h3>Clustering de personajes (Harry Potter)</h3>
-      <p>Segmentación no supervisada basada en atributos narrativos/emocionales y análisis de clusters.</p>
-
-      <ul class="highlights">
-        <li>Selección y transformación de variables para clustering.</li>
-        <li>Comparación de k y evaluación con métricas.</li>
-        <li>Interpretación de clusters y perfiles de personajes.</li>
-      </ul>
-
-      <div class="meta">
-        <span class="stack">Scikit-learn · K-Means · EDA · Interpretación</span>
-        <a href="https://github.com/JuanChavoya/REPO-HARRY-POTTER" target="_blank">Ver repositorio</a>
-      </div>
-    </div>
-  </article>
-</div>
-
-      <div class="card">
-        <h3>EDA de viajes en bicicleta</h3>
-        <p>Exploración de patrones temporales, comportamiento de usuarios y distribución de viajes.</p>
-        <div class="meta">
-          <span class="stack">Python · Pandas · Visualización · Insights</span>
-          <a href="https://github.com/JuanChavoya/ds-eda-bicicletas" target="_blank">Ver repositorio</a>
+    <div class="grid">
+      <!-- Proyecto 1: Siniestros de Vivienda -->
+      <article class="card">
+        <img class="thumb" src="assets/siniestros.png" alt="Analisis de siniestros de vivienda">
+        <div class="card-body">
+          <h3>Analisis de siniestros de vivienda</h3>
+          <p>Analisis de frecuencia y severidad para estimacion de riesgo por sector y metricas clave.</p>
+          <ul class="highlights">
+            <li>Depuracion y estandarizacion de variables criticas.</li>
+            <li>Metricas de riesgo por sector para priorizacion.</li>
+            <li>Visualizaciones para interpretacion ejecutiva.</li>
+          </ul>
+          <div class="meta">
+            <span class="stack">Python · Pandas · EDA · Metricas de riesgo</span>
+            <a href="https://github.com/JuanChavoya/ds-siniestros-vivienda" target="_blank">Ver repositorio</a>
+          </div>
         </div>
-      </div>
+      </article>
 
-      <div class="card">
-        <h3>Clustering de personajes (Harry Potter)</h3>
-        <p>Segmentación no supervisada basada en atributos narrativos/emocionales y análisis de clusters.</p>
-        <div class="meta">
-          <span class="stack">Scikit-learn · K-Means · EDA · Interpretación</span>
-          <a href="https://github.com/JuanChavoya/REPO-HARRY-POTTER" target="_blank">Ver repositorio</a>
+      <!-- Proyecto 2: EDA Bicicletas -->
+      <article class="card">
+        <img class="thumb" src="assets/bicicletas.png" alt="EDA viajes en bicicleta">
+        <div class="card-body">
+          <h3>EDA de viajes en bicicleta</h3>
+          <p>Exploracion de patrones temporales, comportamiento de usuarios y distribucion de viajes.</p>
+          <ul class="highlights">
+            <li>Analisis por hora/dia y estacionalidad.</li>
+            <li>Variables derivadas para enriquecer el dataset.</li>
+            <li>Hallazgos sobre patrones de uso y segmentos.</li>
+          </ul>
+          <div class="meta">
+            <span class="stack">Python · Pandas · Visualizacion · Insights</span>
+            <a href="https://github.com/JuanChavoya/ds-eda-bicicletas" target="_blank">Ver repositorio</a>
+          </div>
         </div>
-      </div>
+      </article>
+
+      <!-- Proyecto 3: Clustering Harry Potter -->
+      <article class="card">
+        <img class="thumb" src="assets/harrypotter.png" alt="Clustering Harry Potter">
+        <div class="card-body">
+          <h3>Clustering de personajes (Harry Potter)</h3>
+          <p>Segmentacion no supervisada basada en atributos narrativos/emocionales y analisis de clusters.</p>
+          <ul class="highlights">
+            <li>Seleccion y transformacion de variables para clustering.</li>
+            <li>Comparacion de k y evaluacion con metricas.</li>
+            <li>Interpretacion de clusters y perfiles de personajes.</li>
+          </ul>
+          <div class="meta">
+            <span class="stack">Scikit-learn · K-Means · EDA · Interpretacion</span>
+            <a href="https://github.com/JuanChavoya/REPO-HARRY-POTTER" target="_blank">Ver repositorio</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Proyecto 4: Beta Bank Churn Prediction -->
+      <article class="card">
+        <img class="thumb" src="assets/churn.png" alt="Beta Bank Churn Prediction">
+        <div class="card-body">
+          <h3>Prediccion de Fuga de Clientes (Beta Bank)</h3>
+          <p>Modelo de clasificacion para identificar clientes con alta probabilidad de abandono bancario.</p>
+          <ul class="highlights">
+            <li>Manejo de desbalance de clases con Oversampling Manual.</li>
+            <li>Random Forest optimizado con F1-Score de 0.647 en prueba.</li>
+            <li>Identificacion de variables clave: Edad, Balance, Numero de Productos.</li>
+          </ul>
+          <div class="meta">
+            <span class="stack">Scikit-learn · Random Forest · SMOTE · AUC-ROC</span>
+            <a href="https://github.com/JuanChavoya/beta_bank_churn_project" target="_blank">Ver repositorio</a>
+          </div>
+        </div>
+      </article>
     </div>
 
     <div class="footer">
