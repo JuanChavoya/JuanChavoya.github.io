@@ -3,238 +3,395 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Juan Chavoya</title>
+  <title>Juan Chavoya · Data Analyst & Actuarial Data Scientist</title>
   <style>
-    :root{
-      --text:#111827;
-      --muted:#6b7280;
-      --bg:#ffffff;
-      --card:#f9fafb;
-      --border:#e5e7eb;
-      --link:#2563eb;
+    /* ----- PALETA Y VARIABLES (inspirado en fuentjaz.github.io) ----- */
+    :root {
+      --bg: #F9F5F2;        /* crema cálido */
+      --text-dark: #2E2E2E;
+      --text-muted: #5C5C5C;
+      --card-bg: #FFFFFF;
+      --border: #E6DED8;
+      --primary: #C46A5E;    /* terracota */
+      --primary-dark: #A85546;
+      --link: #C46A5E;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.08);
     }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.6;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .wrap{
-      max-width: 980px;
+
+    body {
+      background: var(--bg);
+      color: var(--text-dark);
+      font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 48px 20px;
+      padding: 2rem 1.5rem;
     }
-    header{
-      display:flex;
-      gap:18px;
-      justify-content:space-between;
-      align-items:flex-start;
-      flex-wrap:wrap;
-      margin-bottom: 28px;
-    }
-    .title h1{
-      margin:0 0 6px 0;
-      font-size: 34px;
+
+    /* ----- TIPOGRAFÍA ----- */
+    h1, h2, h3 {
+      font-weight: 500;
       letter-spacing: -0.02em;
     }
-    .title p{
-      margin:0;
-      color:var(--muted);
-      max-width: 70ch;
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text-dark);
     }
-    .links{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 1rem;
     }
-    .btn{
-      display:inline-block;
-      padding:10px 14px;
-      border:1px solid var(--border);
-      background:#fff;
-      border-radius:10px;
-      color:var(--text);
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
     }
-    .btn.primary{
-      background: var(--link);
-      color: #fff;
-      border-color: var(--link);
-    }
-    h2{
-      margin: 30px 0 14px 0;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:14px;
-    }
-    .card{
-      grid-column: span 12;
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-    }
-    .thumb{
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .card-body{
-      padding: 16px;
-    }
-    .card h3{
-      margin:0 0 6px 0;
-      font-size: 16px;
-    }
-    .card p{
-      margin:0 0 10px 0;
-      color:var(--muted);
-    }
-    .highlights{
-      padding-left: 18px;
-      margin: 10px 0;
-    }
-    .highlights li{
-      margin-bottom: 6px;
-      font-size: 0.9rem;
-    }
-    .meta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      margin-top: 12px;
-    }
-    .stack{
-      font-size: 0.85rem;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      background:#fff;
-      padding: 6px 10px;
-      border-radius: 999px;
-      white-space:nowrap;
-    }
-    .card a{
+
+    a {
       color: var(--link);
-      text-decoration:none;
-      font-weight:700;
-      font-size:14px;
+      text-decoration: none;
+      transition: color 0.2s;
     }
-    .footer{
-      margin-top: 34px;
-      padding-top: 18px;
+
+    a:hover {
+      color: var(--primary-dark);
+    }
+
+    /* ----- COMPONENTES ----- */
+    .header-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .profile {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      background: white;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ----- TARJETAS DE HABILIDADES / TECNOLOGÍAS ----- */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.2rem 1.5rem;
+      flex: 1;
+      min-width: 180px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    .skill-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .tech-badge {
+      display: inline-block;
+      background: #EFE8E3;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      margin: 0.25rem;
+    }
+
+    /* ----- PROYECTOS (formato problema - solución - resultado) ----- */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid var(--border);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tag {
+      background: #F0EBE7;
+      color: var(--text-dark);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+    }
+
+    .project-problem {
+      background: #FDF8F6;
+      padding: 0.8rem;
+      border-radius: 16px;
+      margin: 1rem 0;
+      border-left: 3px solid var(--primary);
+    }
+
+    .project-problem strong {
+      color: var(--primary-dark);
+    }
+
+    .project-links {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      text-align: center;
       border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 13px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
-    @media (min-width: 820px){
-      .card{ grid-column: span 6; }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 2rem; }
+      .profile { flex-direction: column; text-align: center; }
+      .intro p { text-align: center; }
+      .header-flex { flex-direction: column; align-items: stretch; text-align: center; }
+      .social-links { justify-content: center; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="title">
+<div class="container">
+
+  <!-- CABECERA CON PERFIL Y LINKS -->
+  <div class="header-flex">
+    <div class="profile">
+      <!-- Coloca tu foto aquí (assets/profile.jpg) -->
+      <img class="avatar" src="assets/profile.jpg" alt="Juan Chavoya" onerror="this.src='https://via.placeholder.com/110?text=JC'">
+      <div class="intro">
         <h1>Juan Chavoya</h1>
-        <p>
-          Profesional enfocado en analisis de datos y modelado estadistico, con experiencia en proyectos end-to-end:
-          limpieza, analisis exploratorio, modelado y comunicacion de hallazgos.
-        </p>
+        <p>📊 Analista de Datos · Actuario · Automatizo procesos y construyo modelos predictivos con rigor estadístico.</p>
       </div>
-      <div class="links">
-        <a class="btn" href="https://github.com/JuanChavoya" target="_blank">GitHub</a>
-        <a class="btn primary" href="https://www.linkedin.com/in/juan-chavoya-lira" target="_blank">LinkedIn</a>
-      </div>
-    </header>
-
-    <h2>Proyectos</h2>
-
-    <div class="grid">
-      <!-- Proyecto 1: Siniestros de Vivienda -->
-      <article class="card">
-        <img class="thumb" src="assets/siniestros.png" alt="Analisis de siniestros de vivienda">
-        <div class="card-body">
-          <h3>Analisis de siniestros de vivienda</h3>
-          <p>Analisis de frecuencia y severidad para estimacion de riesgo por sector y metricas clave.</p>
-          <ul class="highlights">
-            <li>Depuracion y estandarizacion de variables criticas.</li>
-            <li>Metricas de riesgo por sector para priorizacion.</li>
-            <li>Visualizaciones para interpretacion ejecutiva.</li>
-          </ul>
-          <div class="meta">
-            <span class="stack">Python · Pandas · EDA · Metricas de riesgo</span>
-            <a href="https://github.com/JuanChavoya/ds-siniestros-vivienda" target="_blank">Ver repositorio</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Proyecto 2: EDA Bicicletas -->
-      <article class="card">
-        <img class="thumb" src="assets/bicicletas.png" alt="EDA viajes en bicicleta">
-        <div class="card-body">
-          <h3>EDA de viajes en bicicleta</h3>
-          <p>Exploracion de patrones temporales, comportamiento de usuarios y distribucion de viajes.</p>
-          <ul class="highlights">
-            <li>Analisis por hora/dia y estacionalidad.</li>
-            <li>Variables derivadas para enriquecer el dataset.</li>
-            <li>Hallazgos sobre patrones de uso y segmentos.</li>
-          </ul>
-          <div class="meta">
-            <span class="stack">Python · Pandas · Visualizacion · Insights</span>
-            <a href="https://github.com/JuanChavoya/ds-eda-bicicletas" target="_blank">Ver repositorio</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Proyecto 3: Clustering Harry Potter -->
-      <article class="card">
-        <img class="thumb" src="assets/harrypotter.png" alt="Clustering Harry Potter">
-        <div class="card-body">
-          <h3>Clustering de personajes (Harry Potter)</h3>
-          <p>Segmentacion no supervisada basada en atributos narrativos/emocionales y analisis de clusters.</p>
-          <ul class="highlights">
-            <li>Seleccion y transformacion de variables para clustering.</li>
-            <li>Comparacion de k y evaluacion con metricas.</li>
-            <li>Interpretacion de clusters y perfiles de personajes.</li>
-          </ul>
-          <div class="meta">
-            <span class="stack">Scikit-learn · K-Means · EDA · Interpretacion</span>
-            <a href="https://github.com/JuanChavoya/ds-clustering-harry-potter" target="_blank">Ver repositorio</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Proyecto 4: Beta Bank Churn Prediction -->
-      <article class="card">
-        <img class="thumb" src="assets/churn.png" alt="Beta Bank Churn Prediction">
-        <div class="card-body">
-          <h3>Prediccion de Fuga de Clientes (Beta Bank)</h3>
-          <p>Modelo de clasificacion para identificar clientes con alta probabilidad de abandono bancario.</p>
-          <ul class="highlights">
-            <li>Manejo de desbalance de clases con Oversampling Manual.</li>
-            <li>Random Forest optimizado con F1-Score de 0.647 en prueba.</li>
-            <li>Identificacion de variables clave: Edad, Balance, Numero de Productos.</li>
-          </ul>
-          <div class="meta">
-            <span class="stack">Scikit-learn · Random Forest · SMOTE · AUC-ROC</span>
-            <a href="https://github.com/JuanChavoya/beta_bank_churn_project" target="_blank">Ver repositorio</a>
-          </div>
-        </div>
-      </article>
     </div>
-
-    <div class="footer">
-      © Juan Chavoya · Sitio publicado con GitHub Pages
+    <div class="social-links">
+      <a href="https://github.com/JuanChavoya" class="btn" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/juan-chavoya-lira" class="btn btn-primary" target="_blank">LinkedIn</a>
     </div>
   </div>
+
+  <!-- WHAT I DO BEST (HABILIDADES CLAVE) -->
+  <h2>⚡ Lo que mejor hago</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4>🔁 Automatización</h4>
+      <p>Reducción de tareas manuales (de días a minutos) con scripts en Python y VBA.</p>
+    </div>
+    <div class="skill-card">
+      <h4>📈 Modelado predictivo</h4>
+      <p>Clasificación, regresión, clustering y series temporales con Scikit‑learn.</p>
+    </div>
+    <div class="skill-card">
+      <h4>📊 Inteligencia de negocio</h4>
+      <p>Dashboards interactivos en Power BI, SQL y storytelling con datos.</p>
+    </div>
+  </div>
+
+  <!-- TECHNOLOGY STACK -->
+  <h2>🛠️ Tecnologías</h2>
+  <div style="margin-bottom: 1.5rem;">
+    <span class="tech-badge">Python (pandas, NumPy, scikit-learn)</span>
+    <span class="tech-badge">SQL (PostgreSQL, MySQL)</span>
+    <span class="tech-badge">Power BI · Power Query</span>
+    <span class="tech-badge">R · VBA</span>
+    <span class="tech-badge">Git · GitHub</span>
+    <span class="tech-badge">Jupyter · Streamlit</span>
+  </div>
+
+  <!-- PROYECTOS DESTACADOS (con formato problema→solución→resultado) -->
+  <h2>📁 Proyectos destacados</h2>
+  <div class="projects-grid">
+
+    <!-- 1. Siniestros de vivienda -->
+    <div class="project-card">
+      <div class="project-content">
+        <div class="project-title">Análisis de Siniestros de Vivienda</div>
+        <div class="project-meta">
+          <span class="project-tag">Modelación actuarial</span>
+          <span class="project-tag">Monte Carlo</span>
+        </div>
+        <div class="project-problem">
+          <strong>⚠️ Problema:</strong> Una aseguradora necesitaba estimar primas técnicas por sector y cuantificar el impacto de deducibles/coaseguro.
+        </div>
+        <div><strong>🔧 Solución:</strong> Ajuste de distribuciones (Log‑normal), cálculo de riesgo por vivienda y simulación Monte Carlo (Poisson + Log‑normal) con 10 000 iteraciones.</div>
+        <div class="project-problem" style="margin-top: 0.5rem;">
+          <strong>📈 Resultado:</strong> Se definieron primas diferenciadas por sector y un esquema de coaseguro del 30%, reduciendo la exposición del asegurador.
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/JuanChavoya/ds-siniestros-vivienda" target="_blank">🔗 Repositorio</a>
+          <a href="#" style="opacity:0.6">📊 Demo (próximamente)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Predicción de fuga (Beta Bank) -->
+    <div class="project-card">
+      <div class="project-content">
+        <div class="project-title">Predicción de Fuga de Clientes – Beta Bank</div>
+        <div class="project-meta">
+          <span class="project-tag">Clasificación</span>
+          <span class="project-tag">Desequilibrio de clases</span>
+        </div>
+        <div class="project-problem">
+          <strong>⚠️ Problema:</strong> El banco sufría alta rotación de clientes; necesitaba identificar tempranamente a quienes podían abandonar.
+        </div>
+        <div><strong>🔧 Solución:</strong> Entrenamiento de Random Forest con sobremuestreo manual y ajuste de pesos. Evaluación con F1‑Score y AUC‑ROC.</div>
+        <div class="project-problem" style="margin-top: 0.5rem;">
+          <strong>📈 Resultado:</strong> F1‑Score de <strong>0.647</strong> en prueba, detectando 3 de cada 4 posibles desertores.
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/JuanChavoya/beta_bank_churn_project" target="_blank">🔗 Repositorio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. EDA de viajes en bicicleta (mejorado) -->
+    <div class="project-card">
+      <div class="project-content">
+        <div class="project-title">EDA de Viajes en Bicicleta (movilidad urbana)</div>
+        <div class="project-meta">
+          <span class="project-tag">Análisis exploratorio</span>
+          <span class="project-tag">Insights operativos</span>
+        </div>
+        <div class="project-problem">
+          <strong>⚠️ Problema:</strong> Operador de bicicletas compartidas necesitaba entender patrones de uso para optimizar flota y campañas.
+        </div>
+        <div><strong>🔧 Solución:</strong> Procesamiento de 657 mil viajes, creación de variables de recurrencia y visualización de horarios pico, días y perfiles de usuario.</div>
+        <div class="project-problem" style="margin-top: 0.5rem;">
+          <strong>📈 Resultado:</strong> Identificación de segmentos funcionales vs. recreativos, permitiendo reasignar bicicletas en horas valle.
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/JuanChavoya/ds-eda-bicicletas" target="_blank">🔗 Repositorio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Clustering Harry Potter (opcional – lo dejo para mostrar versatilidad) -->
+    <div class="project-card">
+      <div class="project-content">
+        <div class="project-title">Clustering de Diálogos (Harry Potter)</div>
+        <div class="project-meta">
+          <span class="project-tag">Aprendizaje no supervisado</span>
+          <span class="project-tag">K‑Means · GMM</span>
+        </div>
+        <div class="project-problem">
+          <strong>⚠️ Problema:</strong> Explorar si los diálogos podían agruparse por tono emocional y longitud para identificar tipos de escenas.
+        </div>
+        <div><strong>🔧 Solución:</strong> Vectorización de emociones (alegría, tristeza, miedo, enojo) y clustering con K‑Means y GMM, validado con silhouette y AIC/BIC.</div>
+        <div class="project-problem" style="margin-top: 0.5rem;">
+          <strong>📈 Resultado:</strong> 4 clusters interpretables (cotidiano, tensión, tragedia, épico), demostrando aplicación de clustering a datos narrativos.
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/JuanChavoya/ds-clustering-harry-potter" target="_blank">🔗 Repositorio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    © Juan Chavoya · Portafolio alojado en GitHub Pages · Inspirado en datos reales y aprendizaje continuo.
+  </div>
+
+</div>
 </body>
 </html>
