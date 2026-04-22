@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juan Chavoya · Data Analyst & Actuarial Data Scientist</title>
   <style>
-    /* ----- PALETA Y VARIABLES (estilo Jazmin) ----- */
+    /* ----- PALETA Y VARIABLES ----- */
     :root {
       --bg: #F9F5F2;
       --text-dark: #2E2E2E;
@@ -30,30 +30,6 @@
       font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
       line-height: 1.5;
       scroll-behavior: smooth;
-    }
-
-    /* ----- BARRA DE CONTACTO SUPERIOR ----- */
-    .contact-bar {
-      background: var(--primary);
-      color: white;
-      padding: 0.5rem 1rem;
-      font-size: 0.85rem;
-      text-align: center;
-    }
-    .contact-bar-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-    .contact-bar a {
-      color: white;
-      text-decoration: none;
-    }
-    .contact-bar a:hover {
-      text-decoration: underline;
     }
 
     /* ----- NAVEGACIÓN ----- */
@@ -195,6 +171,32 @@
     .btn-outline:hover {
       background: var(--border);
       transform: translateY(-2px);
+    }
+
+    /* ----- TARJETA DE CONTACTO (debajo de la foto) ----- */
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1rem 1.2rem;
+      margin-top: 1rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    .contact-card p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .contact-card a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .contact-card a:hover {
+      text-decoration: underline;
     }
 
     /* ----- TARJETAS "WHAT I DO BEST" ----- */
@@ -393,26 +395,29 @@
       }
     }
 
-    /* ----- CONTACTO FINAL (dos columnas) ----- */
-    .contact-wrapper {
+    /* ----- SECCIÓN DE CONTACTO FINAL (sencilla, sin botón volver) ----- */
+    .contact-footer {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .contact-footer .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
-      margin: 1.5rem 0;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 0.8rem;
     }
-    .contact-info {
-      flex: 1;
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-    }
-    .contact-info p {
-      margin: 0.8rem 0;
-    }
-    .contact-info a {
+    .contact-footer a {
       color: var(--primary);
       text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-footer a:hover {
+      text-decoration: underline;
     }
 
     /* ----- FOOTER ----- */
@@ -432,60 +437,59 @@
       .btn-group { justify-content: center; }
       .nav-container { flex-direction: column; }
       .nav-links { justify-content: center; }
-      .contact-bar-content { gap: 0.8rem; flex-direction: column; align-items: center; }
+      .contact-card { text-align: center; }
+      .contact-card p { justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- BARRA DE CONTACTO SUPERIOR -->
-<div class="contact-bar">
-  <div class="contact-bar-content">
-    <a href="mailto:juan.chavoya.lira@gmail.com">✉️ juan.chavoya.lira@gmail.com</a>
-    <a href="https://www.linkedin.com/in/juan-chavoya-lira/" target="_blank">💼 LinkedIn</a>
-    <a href="https://github.com/JuanChavoya" target="_blank">💻 GitHub</a>
-    <span>📍 Zapopan, Jalisco, México</span>
-  </div>
-</div>
-
-<!-- NAVEGACIÓN PRINCIPAL -->
+<!-- NAVEGACIÓN PRINCIPAL (en español) -->
 <nav>
   <div class="nav-container">
     <div class="logo">Juan Chavoya</div>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#expertise">Expertise</a></li>
-      <li><a href="#techstack">Tech Stack</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#especialidades">Especialidades</a></li>
+      <li><a href="#tecnologias">Tecnologías</a></li>
+      <li><a href="#competencias">Competencias</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#trayectoria">Trayectoria</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
   </div>
 </nav>
 
 <main>
   <div class="container">
-    <!-- HOME -->
-    <section id="home" class="section">
+    <!-- INICIO (HOME) -->
+    <section id="inicio" class="section">
       <div class="hero">
         <div class="hero-content">
           <div class="tagline">Actuario + Científico de Datos</div>
           <h1>Juan Chavoya</h1>
           <p class="description">Automatizo procesos financieros y construyo modelos predictivos con rigor estadístico. Transformo datos en decisiones accionables, combinando mi formación actuarial con herramientas modernas de ciencia de datos.</p>
           <div class="btn-group">
-            <a href="#projects" class="btn btn-primary">Ver proyectos</a>
-            <a href="#contact" class="btn btn-outline">Contacto</a>
+            <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+            <a href="#contacto" class="btn btn-outline">Contacto</a>
           </div>
         </div>
         <div class="hero-image">
           <img class="avatar" src="assets/profile.png" alt="Juan Chavoya" onerror="this.src='https://via.placeholder.com/180?text=JC'">
+          <!-- Tarjeta de contacto debajo de la foto -->
+          <div class="contact-card">
+            <p>✉️ <a href="mailto:juan.chavoya.lira@gmail.com">juan.chavoya.lira@gmail.com</a></p>
+            <p>💼 <a href="https://www.linkedin.com/in/juan-chavoya-lira/" target="_blank">linkedin.com/in/juan-chavoya-lira</a></p>
+            <p>💻 <a href="https://github.com/JuanChavoya" target="_blank">github.com/JuanChavoya</a></p>
+            <p>📍 Zapopan, Jalisco, México</p>
+            <p>🌐 Español (nativo) · Inglés (intermedio)</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT I DO BEST (EXPERTISE) -->
-    <section id="expertise" class="section">
+    <!-- ESPECIALIDADES (WHAT I DO BEST) -->
+    <section id="especialidades" class="section">
       <h2>⚡ Lo que mejor hago</h2>
       <div class="grid-3">
         <div class="card-skill">
@@ -503,8 +507,8 @@
       </div>
     </section>
 
-    <!-- TECH STACK -->
-    <section id="techstack" class="section">
+    <!-- TECNOLOGÍAS (TECH STACK) -->
+    <section id="tecnologias" class="section">
       <h2>🛠️ Tecnologías</h2>
       <div style="margin: 1rem 0;">
         <span class="tech-badge">Python (pandas, NumPy, scikit-learn)</span>
@@ -518,8 +522,8 @@
       </div>
     </section>
 
-    <!-- CORE COMPETENCIES (SKILLS) -->
-    <section id="skills" class="section">
+    <!-- COMPETENCIAS (CORE SKILLS) -->
+    <section id="competencias" class="section">
       <h2>🧠 Competencias clave</h2>
       <div class="skills-wrapper">
         <div class="skills-col">
@@ -546,7 +550,7 @@
     </section>
 
     <!-- PROYECTOS DESTACADOS -->
-    <section id="projects" class="section">
+    <section id="proyectos" class="section">
       <h2>📁 Proyectos destacados</h2>
       <div class="projects-grid">
 
@@ -616,8 +620,8 @@
       </div>
     </section>
 
-    <!-- EXPERIENCIA PROFESIONAL (LÍNEA DE TIEMPO) -->
-    <section id="experience" class="section">
+    <!-- TRAYECTORIA PROFESIONAL (LÍNEA DE TIEMPO) -->
+    <section id="trayectoria" class="section">
       <h2>💼 Trayectoria profesional</h2>
       <div class="timeline">
 
@@ -674,26 +678,23 @@
       </div>
     </section>
 
-    <!-- CONTACTO FINAL -->
-    <section id="contact" class="section">
+    <!-- CONTACTO FINAL (sencillo, similar a barra) -->
+    <section id="contacto" class="section">
       <h2>📬 Contacto</h2>
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <p><strong>📧 Email:</strong> <a href="mailto:juan.chavoya.lira@gmail.com">juan.chavoya.lira@gmail.com</a></p>
-          <p><strong>💼 LinkedIn:</strong> <a href="https://linkedin.com/in/juan-chavoya-lira" target="_blank">linkedin.com/in/juan-chavoya-lira</a></p>
-          <p><strong>💻 GitHub:</strong> <a href="https://github.com/JuanChavoya" target="_blank">github.com/JuanChavoya</a></p>
-          <p><strong>📍 Ubicación:</strong> Zapopan, Jalisco, México</p>
-          <p><strong>🌐 Idiomas:</strong> Español (nativo) · Inglés (intermedio)</p>
+      <div class="contact-footer">
+        <p>¿Interesado en colaborar o tienes una oportunidad para mí? Escríbeme sin compromiso.</p>
+        <div class="contact-links">
+          <a href="mailto:juan.chavoya.lira@gmail.com">✉️ juan.chavoya.lira@gmail.com</a>
+          <a href="https://www.linkedin.com/in/juan-chavoya-lira/" target="_blank">💼 LinkedIn</a>
+          <a href="https://github.com/JuanChavoya" target="_blank">💻 GitHub</a>
+          <span>📍 Zapopan, Jal.</span>
         </div>
-        <div class="contact-info">
-          <p>¿Interesado en colaborar o tienes una oportunidad para mí? Escríbeme sin compromiso.</p>
-          <div class="btn-group" style="margin-top: 1rem;">
-            <a href="mailto:juan.chavoya.lira@gmail.com" class="btn btn-primary">✉️ Enviar correo</a>
-            <a href="#home" class="btn btn-outline">⬆ Volver arriba</a>
-          </div>
+        <div style="margin-top: 1rem;">
+          <a href="mailto:juan.chavoya.lira@gmail.com" class="btn btn-primary" style="background: var(--primary-dark); color: white;">✉️ Enviar correo</a>
         </div>
       </div>
     </section>
+
   </div>
 </main>
 
