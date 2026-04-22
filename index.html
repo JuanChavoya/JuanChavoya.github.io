@@ -14,7 +14,6 @@
       --border: #E6DED8;
       --primary: #C46A5E;
       --primary-dark: #A85546;
-      --link: #C46A5E;
       --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
       --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.08);
     }
@@ -33,10 +32,28 @@
       scroll-behavior: smooth;
     }
 
-    .container {
+    /* ----- BARRA DE CONTACTO SUPERIOR ----- */
+    .contact-bar {
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .contact-bar-content {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .contact-bar a {
+      color: white;
+      text-decoration: none;
+    }
+    .contact-bar a:hover {
+      text-decoration: underline;
     }
 
     /* ----- NAVEGACIÓN ----- */
@@ -49,7 +66,6 @@
       backdrop-filter: blur(8px);
       background: rgba(255, 255, 255, 0.95);
     }
-
     .nav-container {
       max-width: 1100px;
       margin: 0 auto;
@@ -60,39 +76,41 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-
     .logo {
       font-weight: 600;
       font-size: 1.3rem;
       color: var(--primary);
     }
-
     .nav-links {
       display: flex;
       gap: 1.5rem;
       flex-wrap: wrap;
       list-style: none;
     }
-
     .nav-links a {
       text-decoration: none;
       color: var(--text-dark);
       font-weight: 500;
       transition: color 0.2s;
     }
-
     .nav-links a:hover {
       color: var(--primary);
     }
 
-    /* ----- TIPOGRAFÍA GENERAL ----- */
+    /* ----- CONTENEDOR PRINCIPAL ----- */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ----- TIPOGRAFÍA ----- */
     h1 {
       font-size: 2.8rem;
       font-weight: 600;
       letter-spacing: -0.02em;
       margin-bottom: 0.5rem;
     }
-
     h2 {
       font-size: 2rem;
       font-weight: 500;
@@ -101,23 +119,20 @@
       border-left: 4px solid var(--primary);
       padding-left: 1rem;
     }
-
     h3 {
       font-size: 1.3rem;
       font-weight: 500;
       margin-bottom: 0.5rem;
     }
-
     .section {
       padding: 2rem 0;
       border-bottom: 1px solid var(--border);
     }
-
     .section:last-of-type {
       border-bottom: none;
     }
 
-    /* ----- COMPONENTES ----- */
+    /* ----- HERO (foto + presentación) ----- */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -125,16 +140,13 @@
       gap: 2rem;
       padding: 2rem 0;
     }
-
     .hero-content {
       flex: 2;
     }
-
     .hero-image {
       flex: 1;
       text-align: center;
     }
-
     .avatar {
       width: 180px;
       height: 180px;
@@ -143,27 +155,23 @@
       border: 3px solid var(--primary);
       box-shadow: var(--shadow-sm);
     }
-
     .tagline {
       font-size: 1.2rem;
       color: var(--primary);
       font-weight: 500;
       margin-bottom: 0.5rem;
     }
-
     .description {
       font-size: 1.1rem;
       color: var(--text-muted);
       margin: 1rem 0;
     }
-
     .btn-group {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
       margin-top: 1.5rem;
     }
-
     .btn {
       display: inline-block;
       padding: 0.7rem 1.5rem;
@@ -175,31 +183,27 @@
       border: 1px solid var(--border);
       color: var(--text-dark);
     }
-
     .btn-primary {
       background: var(--primary);
       color: white;
       border: none;
     }
-
     .btn-primary:hover {
       background: var(--primary-dark);
       transform: translateY(-2px);
     }
-
     .btn-outline:hover {
       background: var(--border);
       transform: translateY(-2px);
     }
 
-    /* ----- TARJETAS (What I Do Best) ----- */
+    /* ----- TARJETAS "WHAT I DO BEST" ----- */
     .grid-3 {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
       margin: 1.5rem 0;
     }
-
     .card-skill {
       background: var(--card-bg);
       border-radius: 20px;
@@ -209,14 +213,13 @@
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border);
     }
-
     .card-skill h4 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
       color: var(--primary);
     }
 
-    /* ----- TECH STACK (badges) ----- */
+    /* ----- TECH BADGES ----- */
     .tech-badge {
       display: inline-block;
       background: #EFE8E3;
@@ -233,7 +236,6 @@
       gap: 2rem;
       margin: 1.5rem 0;
     }
-
     .skills-col {
       flex: 1;
       background: var(--card-bg);
@@ -241,12 +243,10 @@
       border-radius: 20px;
       border: 1px solid var(--border);
     }
-
     .skills-col ul {
       padding-left: 1.2rem;
       margin-top: 0.5rem;
     }
-
     .skills-col li {
       margin-bottom: 0.5rem;
     }
@@ -258,7 +258,6 @@
       gap: 2rem;
       margin: 1.5rem 0;
     }
-
     .project-card {
       background: var(--card-bg);
       border-radius: 24px;
@@ -269,7 +268,6 @@
       display: flex;
       flex-direction: column;
     }
-
     @media (min-width: 700px) {
       .project-card {
         flex-direction: row;
@@ -279,38 +277,32 @@
         flex-shrink: 0;
       }
     }
-
     .project-img {
       height: 200px;
       object-fit: cover;
       background: var(--border);
     }
-
     .project-content {
       padding: 1.5rem;
       flex: 1;
     }
-
     .project-title {
       font-size: 1.4rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
-
     .project-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       margin-bottom: 1rem;
     }
-
     .project-tag {
       background: #F0EBE7;
       font-size: 0.7rem;
       padding: 0.2rem 0.7rem;
       border-radius: 30px;
     }
-
     .project-problem {
       background: #FDF8F6;
       padding: 0.8rem;
@@ -318,37 +310,96 @@
       margin: 0.8rem 0;
       border-left: 3px solid var(--primary);
     }
-
     .project-links {
       margin-top: 1rem;
       display: flex;
       gap: 1rem;
     }
 
-    /* ----- EXPERIENCIA ----- */
-    .exp-item {
-      margin-bottom: 1.5rem;
+    /* ----- LÍNEA DE TIEMPO VERTICAL (Experiencia) ----- */
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 2rem auto;
     }
-
-    .exp-title {
-      font-weight: 600;
-      font-size: 1.1rem;
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
     }
-
-    .exp-date {
-      color: var(--text-muted);
+    .timeline-container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+    .timeline-container.left {
+      left: 0;
+    }
+    .timeline-container.right {
+      left: 50%;
+    }
+    .timeline-container::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: var(--card-bg);
+      border: 4px solid var(--primary);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline-container.right::after {
+      left: -10px;
+    }
+    .timeline-content {
+      padding: 1.5rem;
+      background-color: var(--card-bg);
+      position: relative;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .timeline-content h3 {
+      margin-bottom: 0.2rem;
+    }
+    .timeline-date {
       font-size: 0.85rem;
-      margin-bottom: 0.3rem;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 700px) {
+      .timeline::after {
+        left: 31px;
+      }
+      .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      .timeline-container.right {
+        left: 0%;
+      }
+      .timeline-container.left::after, .timeline-container.right::after {
+        left: 15px;
+      }
     }
 
-    /* ----- CONTACTO (dos columnas) ----- */
+    /* ----- CONTACTO FINAL (dos columnas) ----- */
     .contact-wrapper {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       margin: 1.5rem 0;
     }
-
     .contact-info {
       flex: 1;
       background: var(--card-bg);
@@ -356,16 +407,15 @@
       border-radius: 24px;
       border: 1px solid var(--border);
     }
-
     .contact-info p {
       margin: 0.8rem 0;
     }
-
     .contact-info a {
       color: var(--primary);
       text-decoration: none;
     }
 
+    /* ----- FOOTER ----- */
     .footer {
       text-align: center;
       padding: 1.5rem;
@@ -375,17 +425,30 @@
       margin-top: 2rem;
     }
 
+    /* ----- RESPONSIVE GENERAL ----- */
     @media (max-width: 700px) {
       h1 { font-size: 2rem; }
       .hero { flex-direction: column-reverse; text-align: center; }
       .btn-group { justify-content: center; }
       .nav-container { flex-direction: column; }
       .nav-links { justify-content: center; }
+      .contact-bar-content { gap: 0.8rem; flex-direction: column; align-items: center; }
     }
   </style>
 </head>
 <body>
 
+<!-- BARRA DE CONTACTO SUPERIOR -->
+<div class="contact-bar">
+  <div class="contact-bar-content">
+    <a href="mailto:juan.chavoya.lira@gmail.com">✉️ juan.chavoya.lira@gmail.com</a>
+    <a href="https://www.linkedin.com/in/juan-chavoya-lira/" target="_blank">💼 LinkedIn</a>
+    <a href="https://github.com/JuanChavoya" target="_blank">💻 GitHub</a>
+    <span>📍 Zapopan, Jalisco, México</span>
+  </div>
+</div>
+
+<!-- NAVEGACIÓN PRINCIPAL -->
 <nav>
   <div class="nav-container">
     <div class="logo">Juan Chavoya</div>
@@ -407,12 +470,11 @@
     <section id="home" class="section">
       <div class="hero">
         <div class="hero-content">
-          <div class="tagline">Actuary + Data Scientist</div>
+          <div class="tagline">Actuario + Científico de Datos</div>
           <h1>Juan Chavoya</h1>
           <p class="description">Automatizo procesos financieros y construyo modelos predictivos con rigor estadístico. Transformo datos en decisiones accionables, combinando mi formación actuarial con herramientas modernas de ciencia de datos.</p>
           <div class="btn-group">
             <a href="#projects" class="btn btn-primary">Ver proyectos</a>
-            <a href="assets/CV_Juan_Chavoya.pdf" class="btn btn-outline" download>Descargar CV</a>
             <a href="#contact" class="btn btn-outline">Contacto</a>
           </div>
         </div>
@@ -424,7 +486,7 @@
 
     <!-- WHAT I DO BEST (EXPERTISE) -->
     <section id="expertise" class="section">
-      <h2>⚡ What I Do Best</h2>
+      <h2>⚡ Lo que mejor hago</h2>
       <div class="grid-3">
         <div class="card-skill">
           <h4>🔁 Automatización de procesos</h4>
@@ -443,7 +505,7 @@
 
     <!-- TECH STACK -->
     <section id="techstack" class="section">
-      <h2>🛠️ Technology Stack</h2>
+      <h2>🛠️ Tecnologías</h2>
       <div style="margin: 1rem 0;">
         <span class="tech-badge">Python (pandas, NumPy, scikit-learn)</span>
         <span class="tech-badge">SQL (PostgreSQL, MySQL)</span>
@@ -458,12 +520,12 @@
 
     <!-- CORE COMPETENCIES (SKILLS) -->
     <section id="skills" class="section">
-      <h2>🧠 Core Competencies</h2>
+      <h2>🧠 Competencias clave</h2>
       <div class="skills-wrapper">
         <div class="skills-col">
           <h4>Técnicas</h4>
           <ul>
-            <li>End‑to‑end ML projects (clasificación, regresión, clustering)</li>
+            <li>Proyectos de ML end‑to‑end (clasificación, regresión, clustering)</li>
             <li>Feature engineering y optimización de hiperparámetros</li>
             <li>Limpieza, ETL y validación de datos</li>
             <li>Análisis estadístico y pruebas de hipótesis</li>
@@ -483,12 +545,12 @@
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
+    <!-- PROYECTOS DESTACADOS -->
     <section id="projects" class="section">
-      <h2>📁 Featured Technical Projects</h2>
+      <h2>📁 Proyectos destacados</h2>
       <div class="projects-grid">
 
-        <!-- 1. Siniestros de vivienda -->
+        <!-- Siniestros de vivienda -->
         <div class="project-card">
           <img class="project-img" src="assets/siniestros.png" alt="Análisis de siniestros de vivienda" onerror="this.src='https://via.placeholder.com/280x200?text=Siniestros'">
           <div class="project-content">
@@ -497,20 +559,14 @@
               <span class="project-tag">Modelación actuarial</span>
               <span class="project-tag">Monte Carlo</span>
             </div>
-            <div class="project-problem">
-              <strong>Problema:</strong> Una aseguradora necesitaba estimar primas técnicas por sector y cuantificar el impacto de deducibles/coaseguro.
-            </div>
+            <div class="project-problem"><strong>Problema:</strong> Una aseguradora necesitaba estimar primas técnicas por sector y cuantificar el impacto de deducibles y coaseguro.</div>
             <div><strong>Solución:</strong> Ajuste de distribuciones (Log‑normal), cálculo de riesgo por vivienda y simulación Monte Carlo (Poisson + Log‑normal) con 10 000 iteraciones.</div>
-            <div class="project-problem" style="margin-top: 0.5rem;">
-              <strong>Resultado:</strong> Primas diferenciadas por sector y esquema de coaseguro del 30%, reduciendo la exposición del asegurador.
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JuanChavoya/ds-siniestros-vivienda" target="_blank">🔗 Repositorio</a>
-            </div>
+            <div class="project-problem" style="margin-top: 0.5rem;"><strong>Resultado:</strong> Primas diferenciadas por sector y esquema de coaseguro del 30%, reduciendo la exposición del asegurador.</div>
+            <div class="project-links"><a href="https://github.com/JuanChavoya/ds-siniestros-vivienda" target="_blank">🔗 Repositorio</a></div>
           </div>
         </div>
 
-        <!-- 2. Beta Bank Churn Prediction -->
+        <!-- Beta Bank Churn -->
         <div class="project-card">
           <img class="project-img" src="assets/churn.png" alt="Predicción de fuga de clientes" onerror="this.src='https://via.placeholder.com/280x200?text=Churn'">
           <div class="project-content">
@@ -519,20 +575,14 @@
               <span class="project-tag">Clasificación</span>
               <span class="project-tag">Desequilibrio de clases</span>
             </div>
-            <div class="project-problem">
-              <strong>Problema:</strong> El banco sufría alta rotación de clientes; necesitaba identificar tempranamente a quienes podían abandonar.
-            </div>
+            <div class="project-problem"><strong>Problema:</strong> El banco sufría alta rotación de clientes; necesitaba identificar tempranamente a quienes podían abandonar.</div>
             <div><strong>Solución:</strong> Random Forest con sobremuestreo manual y ajuste de pesos. Evaluación con F1‑Score y AUC‑ROC.</div>
-            <div class="project-problem" style="margin-top: 0.5rem;">
-              <strong>Resultado:</strong> F1‑Score de <strong>0.647</strong> en prueba, detectando 3 de cada 4 posibles desertores.
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JuanChavoya/beta_bank_churn_project" target="_blank">🔗 Repositorio</a>
-            </div>
+            <div class="project-problem" style="margin-top: 0.5rem;"><strong>Resultado:</strong> F1‑Score de <strong>0.647</strong> en prueba, detectando 3 de cada 4 posibles desertores.</div>
+            <div class="project-links"><a href="https://github.com/JuanChavoya/beta_bank_churn_project" target="_blank">🔗 Repositorio</a></div>
           </div>
         </div>
 
-        <!-- 3. EDA de viajes en bicicleta -->
+        <!-- EDA bicicletas -->
         <div class="project-card">
           <img class="project-img" src="assets/bicicletas.png" alt="EDA viajes en bicicleta" onerror="this.src='https://via.placeholder.com/280x200?text=Bicicletas'">
           <div class="project-content">
@@ -541,20 +591,14 @@
               <span class="project-tag">Análisis exploratorio</span>
               <span class="project-tag">Insights operativos</span>
             </div>
-            <div class="project-problem">
-              <strong>Problema:</strong> Operador de bicicletas compartidas necesitaba entender patrones de uso para optimizar flota y campañas.
-            </div>
+            <div class="project-problem"><strong>Problema:</strong> Operador de bicicletas compartidas necesitaba entender patrones de uso para optimizar flota y campañas.</div>
             <div><strong>Solución:</strong> Procesamiento de 657 mil viajes, creación de variables de recurrencia y visualización de horarios pico, días y perfiles de usuario.</div>
-            <div class="project-problem" style="margin-top: 0.5rem;">
-              <strong>Resultado:</strong> Identificación de segmentos funcionales vs. recreativos, permitiendo reasignar bicicletas en horas valle.
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JuanChavoya/ds-eda-bicicletas" target="_blank">🔗 Repositorio</a>
-            </div>
+            <div class="project-problem" style="margin-top: 0.5rem;"><strong>Resultado:</strong> Identificación de segmentos funcionales vs. recreativos, permitiendo reasignar bicicletas en horas valle.</div>
+            <div class="project-links"><a href="https://github.com/JuanChavoya/ds-eda-bicicletas" target="_blank">🔗 Repositorio</a></div>
           </div>
         </div>
 
-        <!-- 4. Clustering Harry Potter -->
+        <!-- Clustering Harry Potter -->
         <div class="project-card">
           <img class="project-img" src="assets/harrypotter.png" alt="Clustering Harry Potter" onerror="this.src='https://via.placeholder.com/280x200?text=Clustering'">
           <div class="project-content">
@@ -563,61 +607,74 @@
               <span class="project-tag">Aprendizaje no supervisado</span>
               <span class="project-tag">K‑Means · GMM</span>
             </div>
-            <div class="project-problem">
-              <strong>Problema:</strong> Explorar si los diálogos podían agruparse por tono emocional y longitud para identificar tipos de escenas.
-            </div>
+            <div class="project-problem"><strong>Problema:</strong> Explorar si los diálogos podían agruparse por tono emocional y longitud para identificar tipos de escenas.</div>
             <div><strong>Solución:</strong> Vectorización de emociones (alegría, tristeza, miedo, enojo) y clustering con K‑Means y GMM, validado con silhouette y AIC/BIC.</div>
-            <div class="project-problem" style="margin-top: 0.5rem;">
-              <strong>Resultado:</strong> 4 clusters interpretables (cotidiano, tensión, tragedia, épico), demostrando aplicación de clustering a datos narrativos.
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/JuanChavoya/ds-clustering-harry-potter" target="_blank">🔗 Repositorio</a>
-            </div>
+            <div class="project-problem" style="margin-top: 0.5rem;"><strong>Resultado:</strong> 4 clusters interpretables (cotidiano, tensión, tragedia, épico), demostrando aplicación de clustering a datos narrativos.</div>
+            <div class="project-links"><a href="https://github.com/JuanChavoya/ds-clustering-harry-potter" target="_blank">🔗 Repositorio</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA PROFESIONAL (LÍNEA DE TIEMPO) -->
+    <section id="experience" class="section">
+      <h2>💼 Trayectoria profesional</h2>
+      <div class="timeline">
+
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <h3>Analista de Datos y Automatización</h3>
+            <div class="timeline-date">CAPIX | 2024 – Actualidad</div>
+            <ul>
+              <li>Automaticé la conciliación entre sistemas contables con Python, eliminando tareas manuales de 2 días.</li>
+              <li>Diseñé procesos de validación y estandarización de datos para reportes financieros, mejorando la trazabilidad.</li>
+              <li>Desarrollé un script que genera estados de cuenta en 15 minutos (antes 1 día).</li>
+              <li>Creé un formulario en VBA con validación automática, reduciendo errores de captura.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-container right">
+          <div class="timeline-content">
+            <h3>Auxiliar de Administración de Seguros</h3>
+            <div class="timeline-date">Ámbar Seguros | 2023 – 2024</div>
+            <ul>
+              <li>Limpieza y depuración de bases de datos de pólizas y clientes, asegurando consistencia de la información.</li>
+              <li>Estandaricé procesos de captura y verificación de datos, reduciendo errores recurrentes.</li>
+              <li>Gestioné flujos de información para soportar cotización y emisión de seguros.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-container left">
+          <div class="timeline-content">
+            <h3>Bootcamp en Ciencia de Datos</h3>
+            <div class="timeline-date">TripleTen | 2025 – 2026</div>
+            <ul>
+              <li>Proyectos end‑to‑end: clasificación, regresión, clustering, series temporales y SQL.</li>
+              <li>Manejo de desbalanceo de clases, validación cruzada y optimización de hiperparámetros.</li>
+              <li>Desarrollo de dashboards interactivos y storytelling con datos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-container right">
+          <div class="timeline-content">
+            <h3>Licenciatura en Actuaría y Ciencia de Datos</h3>
+            <div class="timeline-date">Universidad Autónoma de Guadalajara | 2021 – 2025</div>
+            <ul>
+              <li>Bases sólidas en matemáticas, probabilidad, estadística y finanzas.</li>
+              <li>Modelos actuariales, teoría del riesgo y valor del dinero en el tiempo.</li>
+              <li>Programación en Python, R y SQL aplicada a datos financieros.</li>
+              <li>Machine learning, minería de datos y Big Data.</li>
+            </ul>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- PROFESSIONAL EXPERIENCE -->
-    <section id="experience" class="section">
-      <h2>💼 Professional Experience</h2>
-      <div class="exp-item">
-        <div class="exp-title">Analista de Datos y Automatización</div>
-        <div class="exp-date">CAPIX | 2024 – Actualidad</div>
-        <ul>
-          <li>Automaticé la conciliación entre sistemas contables con Python, eliminando tareas manuales de 2 días.</li>
-          <li>Diseñé procesos de validación y estandarización de datos para reportes financieros, mejorando la trazabilidad.</li>
-          <li>Desarrollé un script que genera estados de cuenta en 15 minutos (antes 1 día).</li>
-          <li>Creé un formulario en VBA con validación automática, reduciendo errores de captura.</li>
-        </ul>
-      </div>
-      <div class="exp-item">
-        <div class="exp-title">Auxiliar de Administración de Seguros</div>
-        <div class="exp-date">Ámbar Seguros | 2023 – 2024</div>
-        <ul>
-          <li>Limpieza y depuración de bases de datos de pólizas y clientes, asegurando consistencia de la información.</li>
-          <li>Estandaricé procesos de captura y verificación de datos, reduciendo errores recurrentes.</li>
-          <li>Gestioné flujos de información para soportar cotización y emisión de seguros.</li>
-        </ul>
-      </div>
-      <div class="exp-item">
-        <div class="exp-title">Formación en Ciencia de Datos</div>
-        <div class="exp-date">TripleTen | 2025 – 2026</div>
-        <ul>
-          <li>Bootcamp intensivo con proyectos end‑to‑end: clasificación, regresión, clustering, series temporales y SQL.</li>
-        </ul>
-      </div>
-      <div class="exp-item">
-        <div class="exp-title">Licenciatura en Actuaría y Ciencia de Datos</div>
-        <div class="exp-date">Universidad Autónoma de Guadalajara | 2021 – 2025</div>
-        <ul>
-          <li>Base sólida en modelos matemáticos, estadística, programación y finanzas.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
+    <!-- CONTACTO FINAL -->
     <section id="contact" class="section">
       <h2>📬 Contacto</h2>
       <div class="contact-wrapper">
@@ -626,18 +683,17 @@
           <p><strong>💼 LinkedIn:</strong> <a href="https://linkedin.com/in/juan-chavoya-lira" target="_blank">linkedin.com/in/juan-chavoya-lira</a></p>
           <p><strong>💻 GitHub:</strong> <a href="https://github.com/JuanChavoya" target="_blank">github.com/JuanChavoya</a></p>
           <p><strong>📍 Ubicación:</strong> Zapopan, Jalisco, México</p>
-          <p><strong>🌐 Idiomas:</strong> Español (nativo) · Inglés (intermedio B2)</p>
+          <p><strong>🌐 Idiomas:</strong> Español (nativo) · Inglés (intermedio)</p>
         </div>
         <div class="contact-info">
-          <p>¿Interesado en colaborar o tienes una oportunidad para mí? Escríbeme sin compromiso. También puedes descargar mi CV completo.</p>
+          <p>¿Interesado en colaborar o tienes una oportunidad para mí? Escríbeme sin compromiso.</p>
           <div class="btn-group" style="margin-top: 1rem;">
-            <a href="assets/CV_Juan_Chavoya.pdf" class="btn btn-primary" download>📄 Descargar CV</a>
-            <a href="mailto:juan.chavoya.lira@gmail.com" class="btn btn-outline">✉️ Enviar correo</a>
+            <a href="mailto:juan.chavoya.lira@gmail.com" class="btn btn-primary">✉️ Enviar correo</a>
+            <a href="#home" class="btn btn-outline">⬆ Volver arriba</a>
           </div>
         </div>
       </div>
     </section>
-
   </div>
 </main>
 
