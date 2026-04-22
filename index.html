@@ -32,7 +32,7 @@
       scroll-behavior: smooth;
     }
 
-    /* ----- NAVEGACIÓN ----- */
+    /* ----- NAVEGACIÓN CON MENÚ HAMBURGUESA ----- */
     nav {
       background: var(--card-bg);
       border-bottom: 1px solid var(--border);
@@ -50,18 +50,27 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1rem;
     }
     .logo {
       font-weight: 600;
       font-size: 1.3rem;
       color: var(--primary);
     }
+    /* Botón hamburguesa (solo visible en móvil) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--primary);
+      padding: 0.2rem 0.5rem;
+    }
     .nav-links {
       display: flex;
       gap: 1.5rem;
-      flex-wrap: wrap;
       list-style: none;
+      transition: all 0.3s ease;
     }
     .nav-links a {
       text-decoration: none;
@@ -71,6 +80,28 @@
     }
     .nav-links a:hover {
       color: var(--primary);
+    }
+
+    /* ----- RESPONSIVE: menú hamburguesa ----- */
+    @media (max-width: 700px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem 0;
+        border-top: 1px solid var(--border);
+        margin-top: 0.5rem;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-links li {
+        text-align: center;
+      }
     }
 
     /* ----- CONTENEDOR PRINCIPAL ----- */
@@ -395,7 +426,7 @@
       }
     }
 
-    /* ----- SECCIÓN DE CONTACTO FINAL (sencilla, sin botón volver) ----- */
+    /* ----- SECCIÓN DE CONTACTO FINAL (sencilla) ----- */
     .contact-footer {
       background: var(--card-bg);
       border-radius: 24px;
@@ -435,8 +466,6 @@
       h1 { font-size: 2rem; }
       .hero { flex-direction: column-reverse; text-align: center; }
       .btn-group { justify-content: center; }
-      .nav-container { flex-direction: column; }
-      .nav-links { justify-content: center; }
       .contact-card { text-align: center; }
       .contact-card p { justify-content: center; }
     }
@@ -444,11 +473,12 @@
 </head>
 <body>
 
-<!-- NAVEGACIÓN PRINCIPAL (en español) -->
+<!-- NAVEGACIÓN CON MENÚ HAMBURGUESA -->
 <nav>
   <div class="nav-container">
     <div class="logo">Juan Chavoya</div>
-    <ul class="nav-links">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#especialidades">Especialidades</a></li>
       <li><a href="#tecnologias">Tecnologías</a></li>
@@ -678,7 +708,7 @@
       </div>
     </section>
 
-    <!-- CONTACTO FINAL (sencillo, similar a barra) -->
+    <!-- CONTACTO FINAL (sencillo) -->
     <section id="contacto" class="section">
       <h2>📬 Contacto</h2>
       <div class="contact-footer">
@@ -701,6 +731,23 @@
 <footer class="footer">
   © 2025 Juan Chavoya · Portafolio alojado en GitHub Pages · Inspirado en datos reales y aprendizaje continuo.
 </footer>
+
+<script>
+  // Menú hamburguesa: toggle al hacer clic
+  const toggleBtn = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+    // Opcional: cerrar menú al hacer clic en un enlace
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
